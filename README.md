@@ -13,7 +13,7 @@ This app was built to give the user the ability to view the weather forecast for
 
 ## Installation
 
-In order to run the app, 
+In order to run the app, click [HERE!](https://hargis32.github.io/HW-6-Weather-Dashboard/)
 
 ## Usage
 
