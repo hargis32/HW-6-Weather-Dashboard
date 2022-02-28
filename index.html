@@ -14,17 +14,24 @@
     <main class = "container-fluid">
         <div class = "row">
             <div class = "col-3">
-                <form>
-                    <div class = "form-group">
-                        <h3>Search for a City:</h3>
-                        <input type="text" id="city-name">
-                        <button class = "bg-primary my-2 " type="button">Search City</button>
-                    </div>
+                <form class = "p-3" id = "city-search">                  
+                    <h3>Search for a City:</h3>
+                    <input class = "col-12" type="text" autofocus = "true" id="city-name">
+                    <button class = "btn btn-primary btn-block my-3" type="submit">Search City</button>      
                 </form>  
                 <div class = "search-history"></div>  
             </div>
             <div class = "col-9">
-                <div class = "row "></div>
+                <div class = "row" id = "forecast-today">
+                    <div class = "col-12">
+                        <h3 id = "city-today-container"></h3>
+                        <div id = "forecast-today-container"></div>
+                    </div>
+                </div>
+                <div class = "row" id = "forecast-five-day">
+                    <h3>5-Day Forecast</h3>
+                    <div class = "d-flex" id = "forecast-five-day-container"></div>
+                </div>
             </div>
         </div>
     </main>
