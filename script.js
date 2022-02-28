@@ -81,7 +81,12 @@ function weatherFiveDay (city) {
         });
     });
 }
-function displayWeatherFiveDay (data){};
+function displayWeatherFiveDay (data){
+    for (let i=0; i < 5; i++) {
+
+    }
+};
+
 
 
 
