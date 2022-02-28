@@ -34,12 +34,15 @@ function handleSearchFormSubmit(event) {
 };
 
 function weatherToday(city) {
-    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIkey;
 
+    todayForecastCont.textContent = "";
+    
     fetch(queryURL)
     .then(function(response){
         response.json().then(function(data){
             displayWeatherToday(data);
+            console.log(data);
         });
     });
 };
@@ -50,20 +53,34 @@ function displayWeatherToday(data) {
     weatherImg.setAttribute("src", `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
     todayForecastCont.appendChild(weatherImg);
     // pulls temp from api response, creates a span and appends it to forecast container
-    let tempToday = document.createElement("span");
-    tempToday.textContent = "Temp:" + data.main.temp;
+    let tempToday = document.createElement("div");
+    tempToday.textContent = "Temp: " + data.main.temp + " F";
     todayForecastCont.appendChild(tempToday);
 
-    let humidityToday = document.createElement("span");
-    humidityToday.textContent = "Humidity:" + data.main.humidity;
+    let humidityToday = document.createElement("div");
+    humidityToday.textContent = "Humidity: " + data.main.humidity + "%";
     todayForecastCont.appendChild(humidityToday);
 
-    let windToday = document.createElement("span");
-    windToday.textContent = "Wind Speed:" + data.wind.speed;
+    let windToday = document.createElement("div");
+    windToday.textContent = "Wind Speed: " + data.wind.speed + " mph";
     todayForecastCont.appendChild(windToday);
 
 
 };
+// utilizes a forecast that can go up to 16 days, but we pass in 5 days in cnt=5
+function weatherFiveDay (city) {
+    let queryUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&cnt=5&units=imperial&appid=" + APIkey;
+
+    fiveDayForecastCont.textContent = "";
+
+    fetch(queryURL)
+    .then(function(response){
+        response.json().then(function(data){
+            displayWeatherToday(data);
+            console.log(data);
+        });
+    });
+}
 
 
 
