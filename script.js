@@ -33,4 +33,19 @@ function handleSearchFormSubmit(event) {
 
 };
 
+function weatherToday(city) {
+    let queryURL = `api.openweathermap.org/data/2.5/weather?q=${city}"&appid=${APIkey}`;
+
+    fetch(queryURL)
+    .then(function(response){
+        response.json().then(function(data){
+            displayWeatherToday(data);
+        });
+    });
+};
+
+
+
+
+
 citySearchEl.addEventListener("submit", handleSearchFormSubmit);
