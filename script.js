@@ -69,7 +69,7 @@ function displayWeatherToday(data) {
 };
 // utilizes a forecast that can go up to 16 days, but we pass in 5 days in cnt=5
 function weatherFiveDay (city) {
-    let queryUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&cnt=5&units=imperial&appid=" + APIkey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&cnt=5&units=imperial&appid=" + APIkey;
 
     fiveDayForecastCont.textContent = "";
 
