@@ -23,9 +23,9 @@ function handleSearchFormSubmit(event) {
         // calls function to fetch for 5 day forecast
         weatherFiveDay(city);
         // calls function to display weather data fetched from API
-        displayWeatherToday(city);
+        // displayWeatherToday(city);
         // calls function to display 5 day forecast
-        displayWeatherFiveDay(city);
+        // displayWeatherFiveDay(city);
 
     } else {
         alert("Must enter a valid city name");
@@ -69,18 +69,19 @@ function displayWeatherToday(data) {
 };
 // utilizes a forecast that can go up to 16 days, but we pass in 5 days in cnt=5
 function weatherFiveDay (city) {
-    let queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&cnt=5&units=imperial&appid=" + APIkey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIkey;
 
     fiveDayForecastCont.textContent = "";
 
     fetch(queryURL)
     .then(function(response){
         response.json().then(function(data){
-            displayWeatherToday(data);
+            displayWeatherFiveDay(data);
             console.log(data);
         });
     });
 }
+function displayWeatherFiveDay (data){};
 
 
 
