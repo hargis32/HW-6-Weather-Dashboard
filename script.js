@@ -8,3 +8,29 @@ const fiveDayForecast = document.getElementById('forecast-five-day');
 const fiveDayForecastCont = document.getElementById('forecast-five-day-container');
 const previousCities = [];
 
+function handleSearchFormSubmit(event) {
+    event.preventDefault();
+    // pulls city name from input field
+    let city = cityNameEl.value;
+
+    if (city) {
+        // saves searched city to local storage
+        localStorage.setItem("searchHistory", JSON.stringify(previousCities));
+        // pushes searched city to array of previously searched cities
+        previousCities.push(city);
+        // calls funcion to fetch for today's weather
+        weatherToday(city);
+        // calls function to fetch for 5 day forecast
+        weatherFiveDay(city);
+        // calls function to display weather data fetched from API
+        displayWeatherToday(city);
+        // calls function to display 5 day forecast
+        displayWeatherFiveDay(city);
+
+    } else {
+        alert("Must enter a valid city name");
+    }
+
+};
+
+citySearchEl.addEventListener("submit", handleSearchFormSubmit);
