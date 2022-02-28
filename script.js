@@ -34,7 +34,7 @@ function handleSearchFormSubmit(event) {
 };
 
 function weatherToday(city) {
-    let queryURL = `api.openweathermap.org/data/2.5/weather?q=${city}"&appid=${APIkey}`;
+    let queryURL = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;
 
     fetch(queryURL)
     .then(function(response){
@@ -44,7 +44,26 @@ function weatherToday(city) {
     });
 };
 
+function displayWeatherToday(data) {
+    // creates img, sets source as api call icon, appends to forecast container
+    let weatherImg = document.createElement("img");
+    weatherImg.setAttribute("src", `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+    todayForecastCont.appendChild(weatherImg);
+    // pulls temp from api response, creates a span and appends it to forecast container
+    let tempToday = document.createElement("span");
+    tempToday.textContent = "Temp:" + data.main.temp;
+    todayForecastCont.appendChild(tempToday);
 
+    let humidityToday = document.createElement("span");
+    humidityToday.textContent = "Humidity:" + data.main.humidity;
+    todayForecastCont.appendChild(humidityToday);
+
+    let windToday = document.createElement("span");
+    windToday.textContent = "Wind Speed:" + data.wind.speed;
+    todayForecastCont.appendChild(windToday);
+
+
+};
 
 
 
