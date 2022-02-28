@@ -18,15 +18,15 @@ In order to run the app, click [HERE!](https://hargis32.github.io/HW-6-Weather-D
 ## Usage
 
 
-![Preview](https://raw.githubusercontent.com/hargis32/HW-19-PWA-Budget-Tracker/main/public/assets/images/2022-02-21%20(2).png)
+![Preview](https://raw.githubusercontent.com/hargis32/HW-6-Weather-Dashboard/main/assets/2022-02-28%20(20).png)
 
-[Heroku Deploy](https://glacial-journey-13701.herokuapp.com/)
   
 
 ## Credits
 
-- [MongoDB Documentation](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/)
+- [OpenWeatherAPI](https://openweathermap.org/api)
 - [StackOverFlow](https://stackoverflow.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
